@@ -73,7 +73,7 @@
     }
     self.snapBehavior = [[UISnapBehavior alloc] initWithItem:self.squareView
                                                  snapToPoint:tapPoint];
-    self.snapBehavior.damping = 0.5f; /* Medium oscillation */
+    self.snapBehavior.damping = 0.1f; /* Medium oscillation */
     [self.animator addBehavior:self.snapBehavior];
 }
 

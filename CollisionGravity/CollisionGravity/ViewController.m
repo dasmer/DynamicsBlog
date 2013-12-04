@@ -26,7 +26,8 @@
     
     UIView* square = [[UIView alloc] initWithFrame:
                       CGRectMake(100, 100, 100, 100)];
-    square.backgroundColor = [UIColor grayColor]; [self.view addSubview:square];
+    square.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:square];
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     _gravity = [[UIGravityBehavior alloc] initWithItems:@[square]]; [_animator addBehavior:_gravity];
     
@@ -43,7 +44,8 @@
                                     barrier.frame.origin.y); [_collision addBoundaryWithIdentifier:@"barrier"
                                                                                          fromPoint:barrier.frame.origin toPoint:rightEdge];
     
-    _collision.translatesReferenceBoundsIntoBoundary = YES; [_animator addBehavior:_collision];
+    _collision.translatesReferenceBoundsIntoBoundary = YES;
+    [_animator addBehavior:_collision];
     _collision.collisionDelegate = self;
     
     UIDynamicItemBehavior* itemBehaviour =
@@ -72,8 +74,10 @@
     if (counter < 2) {
         counter++;
         UIView* square = [[UIView alloc] initWithFrame:CGRectMake(100, 0, 100, 100)];
-        square.backgroundColor = [UIColor grayColor]; [self.view addSubview:square];
-        [_collision addItem:square]; [_gravity addItem:square];
+        square.backgroundColor = [UIColor grayColor];
+        [self.view addSubview:square];
+        [_collision addItem:square];
+        [_gravity addItem:square];
         
 //        UIAttachmentBehavior* attach = [[UIAttachmentBehavior alloc] initWithItem:self.view attachedToItem:square];
 //        [_animator addBehavior:attach];
